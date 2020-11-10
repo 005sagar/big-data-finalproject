@@ -1,6 +1,6 @@
 # Big-Data-FinalProject
 ## About
-In this project, I are trying to tell a story with data. I will first download a text file and then process data using spark and bash command only.
+In this project, I am trying to tell a story with data. I will first download a text file and then process data using spark and bash command only.
 
 ### Pre-requisites and references :
 1. Spark to be configured - [Click here for repo](https://github.com/denisecase/setup-spark). 
@@ -9,10 +9,10 @@ In this project, I are trying to tell a story with data. I will first download a
 4. Basic Markdown Syntax - [Click here for help](https://www.markdownguide.org/basic-syntax/)
 5. Article I took from - [seven](https://www.dailyscript.com/scripts/seven_unknown.html) 
 
-### Getting data and clean data:
-Find a intersteing article/play that you need to do the procesing. I choose SEVEN movie script
-1. Then to get the HTML to a text file use curl commands ```$  curl "https://www.dailyscript.com/scripts/seven_unknown.html" -o "sevenoriginal.txt"```
-2. I didn't have the html tags, but usually these contains html tags. So, if you need to remove html tag use sed command ``` sed -E 's/<[^>]*>/''/g' sevenorignal.txt > seven.txt ```
+### Getting and cleaning data:
+Find a intersteing article/play that you need to do the procesing. I choose 'SEVEN' movie script. 
+1. Then to get the HTML to a text file use curl commands in git bash ```$  curl "https://www.dailyscript.com/scripts/seven_unknown.html" -o "sevenoriginal.txt"```
+2. I didn't have the html tags, but if your data contains html tags you can remove it by using sed command ``` sed -E 's/<[^>]*>/''/g' sevenorignal.txt > seven.txt ```
 3. To clean your data more use this command ```sed -E 's/\b(is|IS|am|AM|are|are|he|He|She|she|them|Them|was|Was|Were|i|I|for|For|you|You|her|Her|him|Him|but|But|So|so|Will|will|Would|would|his|do|Do|it|It|my|My|on|as|at|in|to|me|with|of|that|those|a|up|To|may|In|And|and|if|If|no|No|yes|Yes|all|All|Is|A|be|or|Or|now|Now|we|WE|The|the|what|What|When|when|Where|where)\b/''/g' sevenoriginal.txt > seven.txt ```
 
 ### Process data
@@ -28,4 +28,4 @@ I am going to use Spark for the processing data.
 8. We will get a folder named "Top10words" inside there, open partfile and paste the top 10 results in excel.
 
 ### Report
-![](wordcount.PNG)
+![](wordcount.PNG)x
