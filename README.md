@@ -4,12 +4,13 @@ In this project, I are trying to tell a story with data. I will first download a
 
 ### Pre-requisites and references :
 1. Spark to be configured - [Click here for repo](https://github.com/denisecase/setup-spark). 
-2. Basic coding knowledge of Spark.[Click here for help](https://spark.apache.org/)
-3. Basic Powershell and bash command.[Click here for help](https://devblogs.microsoft.com/scripting/use-a-powershell-cmdlet-to-count-files-words-and-lines/)
-4. Basic Markdown Syntax [Click here for help](https://www.markdownguide.org/basic-syntax/)
+2. Basic coding knowledge of Spark - [Click here for help](https://spark.apache.org/)
+3. Basic Powershell and bash command - [Click here for help](https://devblogs.microsoft.com/scripting/use-a-powershell-cmdlet-to-count-files-words-and-lines/)
+4. Basic Markdown Syntax - [Click here for help](https://www.markdownguide.org/basic-syntax/)
+5. Article I took from - [seven](https://www.dailyscript.com/scripts/seven_unknown.html) 
 
 ### Getting data and clean data:
-Find a intersteing article/play that you need to do the procesing. I choose [seven] movie script.(https://www.dailyscript.com/scripts/seven_unknown.html) 
+Find a intersteing article/play that you need to do the procesing. I choose SEVEN movie script
 1. Then to get the HTML to a text file use curl commands ```$  curl "https://www.dailyscript.com/scripts/seven_unknown.html" -o "sevenoriginal.txt"```
 2. I didn't have the html tags, but usually these contains html tags. So, if you need to remove html tag use sed command ``` sed -E 's/<[^>]*>/''/g' sevenorignal.txt > seven.txt ```
 3. To clean your data more use this command ```sed -E 's/\b(is|IS|am|AM|are|are|he|He|She|she|them|Them|was|Was|Were|i|I|for|For|you|You|her|Her|him|Him|but|But|So|so|Will|will|Would|would|his|do|Do|it|It|my|My|on|as|at|in|to|me|with|of|that|those|a|up|To|may|In|And|and|if|If|no|No|yes|Yes|all|All|Is|A|be|or|Or|now|Now|we|WE|The|the|what|What|When|when|Where|where)\b/''/g' sevenoriginal.txt > seven.txt ```
@@ -26,5 +27,5 @@ I am going to use Spark for the processing data.
 7. We can save the result using ```rddsorted.saveAsTextFile("Top10words")``` command
 8. We will get a folder named "Top10words" inside there, open partfile and paste the top 10 results in excel.
 
-  
-
+### Report
+![](wordcount.PNG)
